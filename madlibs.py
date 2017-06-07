@@ -50,7 +50,8 @@ def show_madlib_form():
     wants_to_play = request.args.get("playgamebool")
 
     if wants_to_play == "True":
-        return render_template("game.html")
+        return render_template("game.html",
+                            user=player)
 
     else:
         return render_template("goodbye.html",
@@ -61,12 +62,14 @@ def show_madlib_form():
 def show_madlib():
     """Show resulting madlib based on user input."""
 
+    player = request.args.get("user")
     person = request.args.get("chooseperson")
     color = request.args.get("color")
     noun = request.args.get("noun")
     adj = request.args.get("adj")
 
     return render_template("madlib.html",
+                        user=player,
                         person=person,
                         color=color,
                         noun=noun,

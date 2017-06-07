@@ -7,7 +7,9 @@
     Great, {{ user }}! Let's play a game!<br><br><br>
     <form action="/madlib">
         <input type="hidden" name="user" value="{{ user }}">
+
         Enter a person: <input type="text" name="chooseperson"><br><br>
+
         Enter a color: <select name="color">
             <option value="green">green</option>
             <option value="blue">blue</option>
@@ -17,8 +19,24 @@
             <option value="violet">violet</option>
             <option value="yellow">yellow</option>
         </select> <br><br>
+
         Enter a noun: <input type="text" name="noun"><br><br>
+
         Enter an adjective: <input type="text" name="adj"><br><br>
+
+        Enter another noun: <input type="text" name="noun2"><br><br>
+
+        Enter another noun: <input type="text" name="noun3"><br><br>
+
+        Choose at least one adjective:<br>
+        <input type="checkbox" name="adj2" value="dangerous">dangerous<br>
+        <input type="checkbox" name="adj2" value="frivolous">frivolous<br>
+        <input type="checkbox" name="adj2" value="agreeable">agreeable<br>
+        <input type="checkbox" name="adj2" value="delightful">delightful<br>
+        <input type="checkbox" name="adj2" value="calm">calm<br><br>
+
+        Choose a verb: <input type="text" name="verb"><br><br>
+
         <input type="submit" value="Submit"><br>
     </form>
 </body>

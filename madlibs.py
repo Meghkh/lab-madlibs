@@ -51,11 +51,11 @@ def show_madlib_form():
 
     if wants_to_play == "True":
         return render_template("game.html",
-                            user=player)
+                               user=player)
 
     else:
         return render_template("goodbye.html",
-                            person=player)
+                               person=player)
 
 
 @app.route('/madlib')
@@ -67,13 +67,24 @@ def show_madlib():
     color = request.args.get("color")
     noun = request.args.get("noun")
     adj = request.args.get("adj")
+    noun2 = request.args.get("noun2")
+    noun3 = request.args.get("noun3")
+    adj2 = request.args.getlist("adj2")
+    verb = request.args.get("verb")
+
+    print "Adj2 list:"
+    print adj2
 
     return render_template("madlib.html",
-                        user=player,
-                        person=person,
-                        color=color,
-                        noun=noun,
-                        adj=adj)
+                           user=player,
+                           person=person,
+                           color=color,
+                           noun=noun,
+                           adj=adj,
+                           noun2=noun2,
+                           noun3=noun3,
+                           adj2=adj2,
+                           verb=verb)
 
 
 if __name__ == '__main__':

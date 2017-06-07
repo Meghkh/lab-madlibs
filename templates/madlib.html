@@ -7,7 +7,20 @@
     Hey, {{ user }}! Here is your Madlib:<br><br>
     <p>
         There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.<br>
-        When {{ person }} went to pick it up, it burst into flames in a totally {{ adj }} way.
+        When {{ person }} went to pick it up, it burst into flames in a totally {{ adj }} way.<br>
+        When the {{ noun2 }} accepted that the {{ noun3 }} would be
+        {% if adj2|length > 1 %}
+            {% for word in range(0, adj2|length - 1) %}
+                {{ adj2[word] }},
+            {% endfor %}
+            and {{ adj2[-1] }},
+        {% elif adj2|length == 1 %}
+            {{ adj2[0] }},
+        {% else %}
+            dangerous
+        {% endif %}
+
+        they decided to {{ verb }} it.
     </p>
 </body>
 </html>
